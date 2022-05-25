@@ -1,0 +1,16 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "out": false // set this to true to hide the "out" folder with the compiled JS files
+    },
+    "search.exclude": {
+        "out": true // set this to false to include "out" folder in search results
+    },
+    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+    "typescript.tsc.autoDetect": "off",
+    "conf.settingEditor.cmd":[
+        ["Ternimal 1", "echo 11", "echo 12"],
+        ["Ternimal 2", "echo 13", "echo 14"],
+        ["Ternimal 3", "echo 15", "echo 16"],
+    ]
+}
