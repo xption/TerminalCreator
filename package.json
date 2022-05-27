@@ -2,7 +2,7 @@
     "name": "terminal-creator",
 	"displayName": "TerminalCreator",
 	"description": "用于自动创建多个Terminal，并在各Terminal中执行相应命令",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "MangoChow",
 	"icon": "assets/logo.jpg",
 	"engines": {

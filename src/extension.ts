@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { TerminalInfo } from './config';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -13,7 +14,18 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('myext.createterminals', async () => {
 		const cmdArray: Array<Array<string>> = vscode.workspace.getConfiguration().get('conf.settingEditor.cmd') as Array<Array<string>>;
 		console.log(cmdArray.length);
+
+        let terminalMap : Map<string, TerminalInfo> = new Map<string, TerminalInfo>();
+
+        for (var i:number = 0; i<cmdArray.length; i++) {
+            var terminalInfo: TerminalInfo = new TerminalInfo(cmdArray[i]);
+            terminalInfo.init(terminalMap);
+            terminalInfo.run();
+            
+            terminalMap.set(terminalInfo.tag, terminalInfo);
+        }
 		
+        /*
 		var parentTerminalA : any;
 
 		for (var i:number = 0; i<cmdArray.length; i++) {
@@ -40,6 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			parentTerminalA = terminal;
 		}
+        */
 	}));
 }
 

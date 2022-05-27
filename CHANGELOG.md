@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "myext" extension will be documented in this file.
+## [0.0.5]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- 更改配置文件格式，支持配置Terminal之间的关系
